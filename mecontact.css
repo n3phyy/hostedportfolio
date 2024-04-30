@@ -1,0 +1,301 @@
+/*General Styles*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background:#FFAFE4; 
+    border-radius: 6px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background: white; 
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+p{
+    color: #080826;
+}
+
+
+
+/* nav css */
+
+a, .btn{
+    transition: all 300ms ease;
+}
+
+nav,
+.nav-links{
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: #080826;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color:  #ff8ce2;
+}
+
+.logo{
+    font-size: 2rem;
+}
+.logo:hover{
+    cursor: default;
+}
+
+/*Hamborger menu*/
+
+#hamborger-nav{
+    display: none;
+}
+.hamborger-menu{
+    position:relative ;
+    display:inline-block;
+}
+.hamborger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamborger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: #080826;
+    transition: all 0.3 ease-in-out;
+}
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-image: linear-gradient(to right, #ff8cd9, #cbb8ff);
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+    z-index: 999;
+    border-radius: 5px;
+    width: 140px;
+    height: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a:hover {
+    color: #080826;
+}
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamborger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px , 5px);
+}
+.hamborger-icon.open span:nth-child(2){
+    opacity:0;
+}
+.hamborger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px , -5px);
+}
+
+.hamborger-icon span:first-child{
+    transform: none;
+}
+
+.hamborger-icon span:first-child(2){
+    opacity:1;
+}
+
+.hamborger-icon span:first-child(2){
+    transform: none;
+}
+
+
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+
+#contacts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    margin-bottom: -60%;
+}
+
+.cicon img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.contact-container .contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container .contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.contact-container .contactInfo .box .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: black;
+    flex-direction: column;
+
+}
+
+.contactForm {
+    width: 40%;
+    padding: 40px;
+    background: linear-gradient(to left, rgba(255, 102, 204, 0.5),rgba(174, 144, 255, 0.5));
+    border-radius: 20px;
+    margin-left: -10%;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input{
+    padding: 40px;
+
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 12px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+    font-family: "Poppins", sans-serif;
+    border-radius: 10px;
+    
+}
+
+.contactForm .inputBox span {
+     position: absolute;
+     left: 0;
+     padding: 5px 0;
+     font-size: 16px;
+     margin: 10px 0;
+     pointer-events: none;
+     transition: 0.5s;
+     
+}
+ 
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+    color:#333;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+
+.contactForm .inputBox input[type="submit"] {
+    width: 200px;
+    margin-top: 7%;
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 30px;
+    margin-left: 35%;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    position: absolute;
+}
+
+.contactForm .inputBox input[type="submit"]:hover {
+    background:linear-gradient(to right, #ff8cd9, #cbb8ff);
+    color: white;
+    border: rgb(255, 255, 255) 0.1rem solid;
+    transform: scale(1.02);
+    font-weight: 500;
+}
